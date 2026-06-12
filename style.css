@@ -378,30 +378,34 @@ h3 {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 10px;
+  gap: 12px;
   max-width: 900px;
-  margin-top: 4px;
+  margin-top: 6px;
 }
 
-.hero-proof span {
-  display: inline-flex;
-  padding: 0;
-  border: 0;
-  border-radius: 0;
-  background: transparent;
-  color: var(--muted);
-  font-family: "JetBrains Mono", monospace;
-  font-size: 1rem;
-  font-weight: 700;
+.experience-pill {
+  min-width: 190px;
+  padding: 14px 18px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.028);
+  text-align: left;
 }
 
-.commission-status {
-  align-items: center;
-  gap: 8px;
-}
-
-.hero-proof .status-text {
+.experience-pill strong {
+  display: block;
   color: var(--accent-strong);
+  font-family: "JetBrains Mono", monospace;
+  font-size: 1.05rem;
+  line-height: 1.2;
+}
+
+.experience-pill span {
+  display: block;
+  margin-top: 4px;
+  color: var(--muted);
+  font-size: 0.86rem;
+  font-weight: 700;
 }
 
 .hero-panel,
