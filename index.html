@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Nimssey is a Roblox Luau scripter available for commissions, gameplay systems, UI logic and scripted Roblox experiences.">
+  <title>Nimssey | Roblox Luau Scripter</title>
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="apple-touch-icon" href="assets/nimssey-avatar.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="page-loader" role="status" aria-live="polite" aria-label="Loading page">
+    <div class="loader-inner">
+      <span>Loading</span>
+      <div class="loader-track" aria-hidden="true">
+        <div class="loader-fill"></div>
+      </div>
+    </div>
+  </div>
+
+  <canvas id="heroCanvas" aria-hidden="true"></canvas>
+
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="Nimssey home">
+      <span class="brand-mark">
+        <img src="assets/nimssey-avatar.png" alt="">
+      </span>
+      <span>Nimssey</span>
+    </a>
+
+    <nav class="site-nav" aria-label="Primary navigation">
+      <a href="#showcase">Showcase</a>
+      <a href="#approach">Approach</a>
+      <a href="#systems">Systems</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero section-shell">
+      <div class="hero-avatar-wrap">
+        <img class="hero-avatar" src="assets/nimssey-avatar.png" alt="Nimssey Roblox avatar">
+      </div>
+
+      <div class="hero-copy">
+        <p class="eyebrow">Roblox scripting portfolio</p>
+        <h1>Nimssey</h1>
+        <p class="hero-subtitle">Roblox Luau Scripter</p>
+        <p class="hero-text">
+          I specialize in clean, modular Roblox systems with real portfolio demonstrations. My focus is simple:
+          quality code, reliable systems and customer approval throughout the commission.
+        </p>
+        <div class="hero-actions" aria-label="Contact and showcase links">
+          <a class="button button-primary" href="https://discordapp.com/users/1379882162601463960" target="_blank" rel="noreferrer">
+            <span class="button-icon icon-discord" aria-hidden="true">
+              <svg viewBox="0 0 24 24" role="img"><path d="M19.54 5.34A18.3 18.3 0 0 0 15.07 4l-.22.44c1.62.4 2.38.98 2.38.98a12.8 12.8 0 0 0-7.28-.28 7.4 7.4 0 0 0-.74.28s.8-.62 2.52-1.02L11.58 4c-1.56.18-3.05.65-4.45 1.34C4.31 9.48 3.55 13.5 3.92 17.45A18 18 0 0 0 9.36 20s.66-.78 1.2-1.46c-2.28-.68-3.14-2.1-3.14-2.1.26.18.52.34.78.48.03.02.06.04.1.06.37.2.75.36 1.12.5.66.26 1.44.5 2.36.66a10.7 10.7 0 0 0 4.2-.02 9.6 9.6 0 0 0 2.32-.66 9.4 9.4 0 0 0 1.22-.62s-.9 1.46-3.24 2.12c.54.68 1.18 1.44 1.18 1.44a18 18 0 0 0 5.48-2.54c.44-4.58-.74-8.56-3.4-12.52ZM9.64 15.02c-1.06 0-1.92-.96-1.92-2.14s.84-2.14 1.92-2.14c1.08 0 1.94.98 1.92 2.14 0 1.18-.84 2.14-1.92 2.14Zm6.9 0c-1.06 0-1.92-.96-1.92-2.14s.84-2.14 1.92-2.14c1.08 0 1.92.98 1.92 2.14 0 1.18-.84 2.14-1.92 2.14Z"/></svg>
+            </span>
+            Contact on Discord
+          </a>
+          <a class="button button-secondary" href="#showcase">View showcases</a>
+        </div>
+      </div>
+
+      <div class="hero-proof" aria-label="Experience summary">
+        <div class="experience-pill">
+          <strong>5 years</strong>
+          <span>Scripting experience</span>
+        </div>
+        <div class="experience-pill">
+          <strong>2 years</strong>
+          <span>Luau experience</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="showcase" class="section-shell section-block">
+      <div class="section-heading">
+        <p class="eyebrow">Selected work</p>
+        <h2>Video showcases</h2>
+        <p>Commission-ready examples of scripted Roblox systems and gameplay work.</p>
+      </div>
+
+      <div class="showcase-grid" id="showcaseGrid">
+        <article class="showcase-card">
+          <a class="video-preview" href="https://www.youtube.com/watch?v=mKo1BVPXFqQ" target="_blank" rel="noreferrer" aria-label="Open Roblox Studio Plot System showcase on YouTube">
+            <img src="https://i.ytimg.com/vi/mKo1BVPXFqQ/hqdefault.jpg" alt="Roblox Studio Plot System showcase thumbnail" loading="lazy">
+            <span class="play-badge" aria-hidden="true"></span>
+          </a>
+          <div class="card-copy">
+            <h3>Plot System</h3>
+            <p>Roblox plot system with ownership logic, player assignment and structured plot handling.</p>
+            <span class="tag">Systems</span>
+            <span class="tag">Plots</span>
+          </div>
+        </article>
+
+        <article class="showcase-card">
+          <a class="video-preview" href="https://www.youtube.com/watch?v=6bf3NBvlvYo" target="_blank" rel="noreferrer" aria-label="Open Roblox Studio Bowling showcase on YouTube">
+            <img src="https://i.ytimg.com/vi/6bf3NBvlvYo/hqdefault.jpg" alt="Roblox Studio Bowling showcase thumbnail" loading="lazy">
+            <span class="play-badge" aria-hidden="true"></span>
+          </a>
+          <div class="card-copy">
+            <h3>Bowling System</h3>
+            <p>Roblox bowling system with scripted ball handling and player interaction.</p>
+            <span class="tag">Luau</span>
+            <span class="tag">Gameplay</span>
+          </div>
+        </article>
+
+        <article class="showcase-card">
+          <a class="video-preview" href="https://www.youtube.com/watch?v=xMqjHtkGINA" target="_blank" rel="noreferrer" aria-label="Open Roblox Studio Morph System showcase on YouTube">
+            <img src="https://i.ytimg.com/vi/xMqjHtkGINA/hqdefault.jpg" alt="Roblox Studio Morph System showcase thumbnail" loading="lazy">
+            <span class="play-badge" aria-hidden="true"></span>
+          </a>
+          <div class="card-copy">
+            <h3>Morph System</h3>
+            <p>Roblox morph system for character transformation, selection logic and in-game application.</p>
+            <span class="tag">Systems</span>
+            <span class="tag">Roblox</span>
+          </div>
+        </article>
+
+        <article class="showcase-card">
+          <a class="video-preview" href="https://www.youtube.com/watch?v=zWAwexBTIHw" target="_blank" rel="noreferrer" aria-label="Open Roblox Studio Clone System showcase on YouTube">
+            <img src="https://i.ytimg.com/vi/zWAwexBTIHw/hqdefault.jpg" alt="Roblox Studio Clone System showcase thumbnail" loading="lazy">
+            <span class="play-badge" aria-hidden="true"></span>
+          </a>
+          <div class="card-copy">
+            <h3>Clone System</h3>
+            <p>Roblox clone system with controlled duplication logic and scripted player-facing behavior.</p>
+            <span class="tag">Mechanics</span>
+            <span class="tag">Luau</span>
+          </div>
+        </article>
+
+        <article class="showcase-card">
+          <a class="video-preview" href="https://www.youtube.com/watch?v=PYQwaUuu8V0" target="_blank" rel="noreferrer" aria-label="Open Roblox Studio Bomb and Obstacles showcase on YouTube">
+            <img src="https://i.ytimg.com/vi/PYQwaUuu8V0/hqdefault.jpg" alt="Roblox Studio Bomb and Obstacles showcase thumbnail" loading="lazy">
+            <span class="play-badge" aria-hidden="true"></span>
+          </a>
+          <div class="card-copy">
+            <h3>Bomb + Obstacles</h3>
+            <p>Roblox obstacle system with bomb mechanics, hazard timing and gameplay interaction.</p>
+            <span class="tag">Gameplay</span>
+            <span class="tag">Obstacles</span>
+          </div>
+        </article>
+
+        <article class="showcase-card">
+          <a class="video-preview" href="https://www.youtube.com/watch?v=0xBl9AEFvnk" target="_blank" rel="noreferrer" aria-label="Open Roblox Studio RNG System showcase on YouTube">
+            <img src="https://i.ytimg.com/vi/0xBl9AEFvnk/hqdefault.jpg" alt="Roblox Studio RNG System showcase thumbnail" loading="lazy">
+            <span class="play-badge" aria-hidden="true"></span>
+          </a>
+          <div class="card-copy">
+            <h3>RNG System</h3>
+            <p>Roblox complete RNG system with roll logic, rewards and structured result handling.</p>
+            <span class="tag">RNG</span>
+            <span class="tag">Systems</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="approach" class="section-shell section-block approach-section">
+      <div class="section-heading approach-heading">
+        <p class="eyebrow">Commission approach</p>
+        <h2>Clean systems first.</h2>
+        <p>
+          My portfolio is based on system demonstrations, not generic claims. Each showcase represents the kind of
+          scripting work I focus on: modular structure, readable logic and features that are built to feel stable in-game.
+        </p>
+      </div>
+
+      <div class="principle-list">
+        <article class="principle-item">
+          <span>01</span>
+          <h3>Modular scripting</h3>
+          <p>Systems are planned as separate, understandable parts so they can be expanded, fixed and adjusted without messy rewrites.</p>
+        </article>
+        <article class="principle-item">
+          <span>02</span>
+          <h3>Quality of the system</h3>
+          <p>The goal is not only making a feature work once, but making it reliable, clear and ready for real player use.</p>
+        </article>
+        <article class="principle-item">
+          <span>03</span>
+          <h3>Customer approval</h3>
+          <p>Commission work is shaped around the requested result, with changes reviewed against the client vision before delivery.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="systems" class="section-shell section-block">
+      <div class="section-heading">
+        <p class="eyebrow">System focus</p>
+        <h2>Scripting demonstrated through real systems.</h2>
+      </div>
+
+      <div class="systems-list">
+        <div class="system-line">
+          <h3>Luau</h3>
+          <p>Gameplay logic, server/client code and Roblox feature implementation.</p>
+        </div>
+        <div class="system-line">
+          <h3>Modular systems</h3>
+          <p>Structured scripted features designed around real gameplay needs.</p>
+        </div>
+        <div class="system-line">
+          <h3>UI Logic</h3>
+          <p>Interactive Roblox interfaces connected to responsive game behavior.</p>
+        </div>
+        <div class="system-line">
+          <h3>Polish</h3>
+          <p>Debugging, refinements and practical improvements before delivery.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="pricing" class="section-shell section-block pricing-section">
+      <div class="section-heading">
+        <p class="eyebrow">Pricing</p>
+        <h2>Commission ranges</h2>
+        <p>Final pricing depends on scope, complexity, deadline and required polish. Payments are accepted in USD or Robux.</p>
+      </div>
+
+      <div class="pricing-table" aria-label="Commission price ranges">
+        <article class="price-row">
+          <div>
+            <h3>Minor Systems & Simple Scripts</h3>
+            <p>UI interactions, basic data handling, lightweight mechanics, small utilities.</p>
+          </div>
+          <strong>$15-$40 USD / 4K-12K Robux</strong>
+        </article>
+        <article class="price-row">
+          <div>
+            <h3>Advanced Systems</h3>
+            <p>Combat modules, ability frameworks, interactive mechanics, anti-cheat components, scalable subsystems.</p>
+          </div>
+          <strong>$60-$100 USD / 18K-35K Robux</strong>
+        </article>
+        <article class="price-row">
+          <div>
+            <h3>Advanced Bug-Fixing & Difficult Mechanics</h3>
+            <p>Deep refactoring, optimization of complex systems, critical issue fixes, high-complexity mechanics.</p>
+          </div>
+          <strong>$120+ USD / 35K+ Robux</strong>
+        </article>
+        <article class="price-row">
+          <div>
+            <h3>Core Game Frameworks</h3>
+            <p>Complete game cores, progression frameworks, modular architectures, scalable system foundations.</p>
+          </div>
+          <strong>$200+ USD / 60K+ Robux</strong>
+        </article>
+        <article class="price-row">
+          <div>
+            <h3>Full Games / Complete Experiences</h3>
+            <p>Full game development, integrated systems, technical pipelines, end-to-end structure.</p>
+          </div>
+          <strong>$500+ USD / 150K+ Robux</strong>
+        </article>
+      </div>
+
+      <div class="payment-grid">
+        <article class="payment-note">
+          <h3>Payment</h3>
+          <p>PayPal or Robux. <span class="highlight-blue">Robux payments must be tax covered by the client.</span></p>
+          <p>Payment is required upfront or 50% upfront, depending on scope. No payments after delivery.</p>
+        </article>
+        <article class="payment-note">
+          <h3>Review & support</h3>
+          <p>System review and issue support are unlimited for problems with the delivered system.</p>
+          <p>This does not include free redesigns, new features or scope changes after approval.</p>
+        </article>
+        <article class="payment-note">
+          <h3>Collaboration</h3>
+          <p>Percentage-based roles are considered only for structured, long-term projects with a clear roadmap.</p>
+          <p>Available for single tasks, complex systems and ongoing collaborations.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="contact" class="section-shell contact-section">
+      <div>
+        <p class="eyebrow">Start a commission</p>
+        <h2>Have a Roblox system in mind?</h2>
+        <p>Send the idea, references, deadline and budget range. I will review the scope and reply with the next steps.</p>
+      </div>
+      <div class="contact-actions">
+        <a class="button button-primary" href="https://discordapp.com/users/1379882162601463960" target="_blank" rel="noreferrer">
+          <span class="button-icon icon-discord" aria-hidden="true">
+            <svg viewBox="0 0 24 24" role="img"><path d="M19.54 5.34A18.3 18.3 0 0 0 15.07 4l-.22.44c1.62.4 2.38.98 2.38.98a12.8 12.8 0 0 0-7.28-.28 7.4 7.4 0 0 0-.74.28s.8-.62 2.52-1.02L11.58 4c-1.56.18-3.05.65-4.45 1.34C4.31 9.48 3.55 13.5 3.92 17.45A18 18 0 0 0 9.36 20s.66-.78 1.2-1.46c-2.28-.68-3.14-2.1-3.14-2.1.26.18.52.34.78.48.03.02.06.04.1.06.37.2.75.36 1.12.5.66.26 1.44.5 2.36.66a10.7 10.7 0 0 0 4.2-.02 9.6 9.6 0 0 0 2.32-.66 9.4 9.4 0 0 0 1.22-.62s-.9 1.46-3.24 2.12c.54.68 1.18 1.44 1.18 1.44a18 18 0 0 0 5.48-2.54c.44-4.58-.74-8.56-3.4-12.52ZM9.64 15.02c-1.06 0-1.92-.96-1.92-2.14s.84-2.14 1.92-2.14c1.08 0 1.94.98 1.92 2.14 0 1.18-.84 2.14-1.92 2.14Zm6.9 0c-1.06 0-1.92-.96-1.92-2.14s.84-2.14 1.92-2.14c1.08 0 1.92.98 1.92 2.14 0 1.18-.84 2.14-1.92 2.14Z"/></svg>
+          </span>
+          Discord
+        </a>
+        <a class="button button-secondary" href="https://www.roblox.com/users/8594259676/profile" target="_blank" rel="noreferrer">
+          <span class="button-icon icon-roblox" aria-hidden="true">
+            <svg viewBox="0 0 24 24" role="img"><path d="M6.1 2.8 21.2 6.1 17.9 21.2 2.8 17.9 6.1 2.8Zm5.1 7.1-.9 4 4 .9.9-4-4-.9Z"/></svg>
+          </span>
+          Roblox profile
+        </a>
+        <a class="button button-secondary" href="https://guns.lol/nimssey" target="_blank" rel="noreferrer">
+          <span class="button-icon icon-guns" aria-hidden="true">G</span>
+          guns.lol
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© <span id="year"></span> Nimssey. Roblox Luau scripting portfolio.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
