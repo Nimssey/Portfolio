@@ -74,7 +74,7 @@ async function loadLiveGames() {
 		const live = byId.get(entry.universeId) || {};
 		const playing = Number(live.playing) || 0;
 		const id = String(entry.universeId);
-		const peak = Math.max(Number(peaks[id]) || 0, playing);
+		const peak = Math.max(Number(peaks[id]) || 0, playing, Number(entry.peak) || 0);
 		if (peak !== Number(peaks[id] || 0)) {
 			peaks[id] = peak;
 			peaksChanged = true;

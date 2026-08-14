@@ -61,11 +61,23 @@
 		localStorage.setItem(config.peakKey, JSON.stringify(peaks));
 	}
 
+	function seededPeak(universeId) {
+		const entry = catalog.find(function (game) {
+			return String(game.universeId) === String(universeId);
+		});
+		return Number(entry && entry.peak) || 0;
+	}
+
 	function mergePeaks(games) {
 		const stored = readLocalPeaks();
 		games.forEach(function (game) {
 			const id = String(game.universeId);
-			stored[id] = Math.max(Number(stored[id]) || 0, Number(game.playing) || 0, Number(game.peak) || 0);
+			stored[id] = Math.max(
+				Number(stored[id]) || 0,
+				Number(game.playing) || 0,
+				Number(game.peak) || 0,
+				seededPeak(id)
+			);
 			game.peak = stored[id];
 		});
 		writeLocalPeaks(stored);
@@ -81,7 +93,7 @@
 				url: entry.url,
 				playing: 0,
 				visits: 0,
-				peak: 0,
+				peak: Number(entry.peak) || 0,
 				thumbnail: entry.thumbnail || "",
 				icon: entry.icon || "",
 				released: entry.released || "",
@@ -136,7 +148,7 @@
 					url: entry.url,
 					playing: live.playing || 0,
 					visits: live.visits || 0,
-					peak: 0,
+					peak: Number(entry.peak) || 0,
 					thumbnail: thumbs[entry.universeId] || entry.thumbnail || "",
 					icon: icons[entry.universeId] || entry.icon || "",
 					released: live.created || entry.released || "",
