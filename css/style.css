@@ -609,6 +609,12 @@ html:has(.page-home),
 }
 
 @media (max-width: 720px) {
+	.site-header {
+		background: transparent;
+		backdrop-filter: none;
+		border-bottom-color: transparent;
+	}
+
 	.nav-toggle {
 		display: inline-flex;
 	}
@@ -638,11 +644,6 @@ html:has(.page-home),
 		visibility: visible;
 		pointer-events: auto;
 		transform: none;
-	}
-
-	body.nav-open .site-header {
-		background: var(--surface);
-		backdrop-filter: none;
 	}
 
 	.nav-links a {
