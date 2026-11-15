@@ -27,7 +27,7 @@ const PLAY_SVG = '<svg width="14" height="14" viewBox="0 0 24 24"><path fill="cu
 function renderProfile() {
   document.title = CONFIG.name;
   $("name").textContent = CONFIG.name;
-  $("navName").textContent = CONFIG.name;
+  if ($("navName")) $("navName").textContent = CONFIG.name;
 
 
   const nr = $("navRoblox");
@@ -35,7 +35,7 @@ function renderProfile() {
   const nd = $("navDiscord");
   if (CONFIG.links.discord) { nd.href = CONFIG.links.discord; nd.innerHTML = ICONS.discord + "Discord"; } else nd.remove();
   $("badge").innerHTML = CONFIG.verified ? VERIFIED_SVG : "";
-  $("role").textContent = CONFIG.role;
+  if ($("role")) $("role").textContent = CONFIG.role;
   
   $("year").textContent = new Date().getFullYear();
 
@@ -152,7 +152,21 @@ function animateCount(el, value, withDot) {
 
 const byPlaying = (a, b) => (b.playing || 0) - (a.playing || 0);
 
+// hero: highlight the experience with the most live players
+function renderFeatured(games) {
+  const el = $("featured"), g = games[0];
+  if (!el || !g) return;
+  el.innerHTML = `<img class="feat-img" src="${g.icon || ""}" alt="${g.name}" onerror="this.removeAttribute('src')">
+    <div class="feat-body">
+      <span class="feat-tag"><i class="dot"></i>${fmt(g.playing)} playing now</span>
+      <h3>${g.name}</h3>
+      <div class="feat-meta"><span><b>${fmt(g.visits)}</b> visits</span><span><b>${fmt(g.favorites)}</b> favorites</span></div>
+      <a class="btn btn-primary" href="https://www.roblox.com/games/${g.placeId}" target="_blank" rel="noopener">${PLAY_SVG} Play on Roblox</a>
+    </div>`;
+}
+
 function updateLive(games) {
+  renderFeatured(games);
   $("cards").innerHTML = games.map((g) => cardHTML(g)).join("");
   $("cards").querySelectorAll(".card").forEach((c) => c.classList.add("show"));
   const sum = (k) => games.reduce((a, g) => a + (g[k] || 0), 0);
@@ -177,6 +191,7 @@ async function renderExperiences() {
   }
   const games = (await Promise.all(CONFIG.experiences.map(loadGame))).sort(byPlaying);
   cards.innerHTML = games.map((g) => cardHTML(g)).join("");
+  renderFeatured(games);
 
   const io = new IntersectionObserver((entries) => entries.forEach((e) => {
     if (e.isIntersecting) { e.target.classList.add("show"); io.unobserve(e.target); }

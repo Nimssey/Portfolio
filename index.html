@@ -6,53 +6,68 @@
   <title>Nimssey</title>
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=8">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=44">
 </head>
 <body>
-  <div class="bg"><span class="orb o1"></span><div class="dots"></div><div class="noise"></div></div>
+  <div class="bg" aria-hidden="true">
+    <div class="bg-grid"></div>
+    <div class="bg-glow"></div>
+
+
+    <div class="bg-noise"></div>
+  </div>
 
   <nav class="nav" id="nav">
-    <a href="#top" class="brand"><span id="navName"></span></a>
-    <div class="nav-live mono"><i class="dot"></i><span id="navLive">—</span>&nbsp;playing now</div>
-    <div class="nav-right">
-      <a class="icon-btn" id="navRoblox" target="_blank" rel="noopener" title="Roblox profile"></a>
-      <a class="btn btn-discord sm" id="navDiscord" target="_blank" rel="noopener"></a>
+    <div class="nav-inner">
+      <div class="nav-links" id="navLinks">
+        <a href="#stats" data-sec="stats">Stats</a>
+        <a href="#experiences" data-sec="experiences">Games</a>
+      </div>
+      <div class="nav-right">
+        <span class="nav-live"><i class="dot"></i><span id="navLive">—</span> online</span>
+        <a class="icon-btn" id="navRoblox" target="_blank" rel="noopener" title="Roblox profile"></a>
+        <a class="btn btn-ghost sm" id="navDiscord" target="_blank" rel="noopener"></a>
+      </div>
     </div>
   </nav>
 
-  <header id="top" class="hero">
-    <div class="avatar-wrap">
-      <div class="avatar-ring"></div>
-      <div class="avatar-clip"><img id="photo" class="avatar" alt="Profile photo" draggable="false"></div>
+  <header id="top" class="hero wrap">
+    <div class="hero-main">
+      <div class="avatar-wrap"><div class="avatar-clip"><img id="photo" class="avatar" alt="Profile photo" draggable="false"></div></div>
+      <h1 class="name"><span id="name"></span><span id="badge"></span></h1>
+      <div class="socials" id="socials"></div>
     </div>
-    <h1 class="name"><span id="name"></span><span id="badge"></span></h1>
-    <p class="role" id="role"></p>
-    <div class="socials" id="socials"></div>
+    <aside class="featured" id="featured">
+      <div class="feat-img skeleton"></div>
+      <div class="feat-body"><div class="skeleton" style="height:18px;width:40%;border-radius:6px"></div><div class="skeleton" style="height:28px;width:80%;border-radius:6px"></div></div>
+    </aside>
   </header>
 
-  <section id="stats" class="section">
-    <div class="sec-head"><h2>Stats</h2><p>Real-time numbers across all my experiences, pulled straight from Roblox.</p></div>
+  <section id="stats" class="wrap section">
     <div class="totals">
-      <div class="glass total"><span class="t-lbl">Visits</span><span class="t-val" id="tVisits">—</span></div>
-      <div class="glass total"><span class="t-lbl">CCU</span><span class="t-val" id="tPlaying"><i class="dot"></i>—</span></div>
-      <div class="glass total"><span class="t-lbl">Favorites</span><span class="t-val" id="tFavs">—</span></div>
-      <div class="glass total"><span class="t-lbl">Games</span><span class="t-val" id="tGames">—</span></div>
+      <div class="total"><span class="t-lbl">Total visits</span><span class="t-val" id="tVisits">—</span></div>
+      <div class="total"><span class="t-lbl">CCU</span><span class="t-val" id="tPlaying"><i class="dot"></i>—</span></div>
+      <div class="total"><span class="t-lbl">Favorites</span><span class="t-val" id="tFavs">—</span></div>
+      <div class="total"><span class="t-lbl">Games</span><span class="t-val" id="tGames">—</span></div>
     </div>
   </section>
 
-  <div class="divider"></div>
-
-  <section id="experiences" class="section">
-    <div class="sec-head"><h2>Experiences</h2><p>Games I've built and worked on.</p></div>
+  <section id="experiences" class="wrap section">
+    <div class="sec-head">
+      <h2>Games</h2>
+      <p>Experiences I've built and worked on, sorted by live players.</p>
+    </div>
     <div class="cards" id="cards"></div>
   </section>
 
-  <footer id="contact" class="footer">
-    <p class="small mono">© <span id="year"></span> Nimssey</p>
+  <footer class="footer wrap">
+    <span>© <span id="year"></span> Nimssey</span>
+
   </footer>
 
-  <script src="config.js?v=9"></script>
-  <script src="script.js?v=9"></script>
+  <script src="config.js?v=44"></script>
+  <script src="script.js?v=44"></script>
 </body>
 </html>
