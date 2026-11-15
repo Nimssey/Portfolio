@@ -132,7 +132,9 @@ img{display:block}
   .featured{width:100%;max-width:440px}
 }
 @media (max-width:720px){
-  .nav-links,.nav-live{display:none}
+  .nav-links{display:none}
+  .nav-right{flex:1;margin-left:0}
+  .nav-live{margin-right:auto}
   .totals{grid-template-columns:1fr 1fr}
   .total:nth-child(3){border-left:0}
   .total:nth-child(n+3){border-top:1px solid var(--border)}
